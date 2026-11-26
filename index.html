@@ -6,6 +6,85 @@
 
     <style>
         /* El programador CSS insertará su código aquí */
+body { 
+            font-family: sans-serif; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            height: 100vh; 
+            background: yellow; 
+            margin: 0;
+            transition: background-color 1s;
+            overflow: hidden;
+        }
+
+        .card { 
+            background: white; 
+            padding: 2rem; 
+            border-radius: 10px; 
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
+            width: 300px; 
+            text-align: center;
+            position: relative;
+            z-index: 10;
+        }
+
+        input { 
+            width: 90%; 
+            padding: 10px; 
+            margin: 10px 0; 
+            border: 1px solid #ccc; 
+            border-radius: 5px;
+        }
+
+        button { 
+            background: #007bff; 
+            color: white; 
+            border: none; 
+            padding: 10px 20px; 
+            border-radius: 5px; 
+            cursor: pointer; 
+            transition: .3s;
+        }
+
+        button:hover { 
+            background: #0056b3;
+        }
+
+        #mensaje { 
+            margin-top: 15px; 
+            font-weight: bold;
+        }
+
+
+        /* Estilo de los fuegos artificiales */
+
+        .fuego {
+
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: orange;
+            animation: explosion 1s forwards;
+
+        }
+
+
+        @keyframes explosion {
+
+            0% {
+                transform: scale(0);
+                opacity: 1;
+            }
+
+
+            100% {
+                transform: scale(8);
+                opacity: 0;
+            }
+
+        }
 
 
     </style>
