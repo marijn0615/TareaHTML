@@ -113,7 +113,129 @@ body {
     </div>
 
 <script>
-        // El programador JS insertará su código aquí
+        // -------------------------------
+    // Función original del saludo
+    // -------------------------------
+
+    document.getElementById('btnSaludar')
+    .addEventListener('click', function() {
+
+
+        const nombre = document
+            .getElementById('nombreUsuario')
+            .value;
+
+
+        const display = document
+            .getElementById('mensaje');
+
+
+        if (nombre.trim() === "") {
+
+
+            display.innerText = 
+                "⚠️ Por favor, escribe algo.";
+
+            display.style.color = "red";
+
+
+        } else {
+
+
+            display.innerText = 
+                "¡Hola, " + nombre + 
+                "! Éxito en tu práctica de Git.";
+
+
+            display.style.color = "green";
+
+        }
+
+
+    });
+
+
+
+
+    // -------------------------------
+    // Cambio automático de colores
+    // -------------------------------
+
+
+    const colores = [
+        "yellow",
+        "green",
+        "blue"
+    ];
+
+
+    let posicionColor = 0;
+
+
+
+    setInterval(function() {
+
+
+        document.body.style.backgroundColor = 
+            colores[posicionColor];
+
+
+        posicionColor++;
+
+
+        if (posicionColor >= colores.length) {
+
+            posicionColor = 0;
+
+        }
+
+
+    }, 1000);
+
+
+
+
+
+
+    // -------------------------------
+    // Fuegos artificiales
+    // -------------------------------
+
+
+    function crearFuego() {
+
+
+        const fuego = document.createElement("div");
+
+
+        fuego.className = "fuego";
+
+
+        fuego.style.left = 
+            Math.random() * window.innerWidth + "px";
+
+
+        fuego.style.top = 
+            Math.random() * window.innerHeight + "px";
+
+
+
+        document.body.appendChild(fuego);
+
+
+
+        setTimeout(function() {
+
+            fuego.remove();
+
+        }, 1000);
+
+
+    }
+
+
+
+    setInterval(crearFuego, 500);
 
 
 </script>
